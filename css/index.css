@@ -1,0 +1,148 @@
+ /*FONT IMPORTS
+----------------------------------------------- */
+@font-face {
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../font/AvenirNextLTPro-Regular.otf);
+}
+
+@font-face {
+  font-family: 'Avenir Light';
+  font-style: italic;
+  font-weight: 400;
+  src: url(../font/AvenirNextLTPro-It.otf);
+}
+
+@font-face {
+  font-family: 'Avenir Bold';
+  font-style: bold;
+  font-weight: 400;
+  src: url(../font/AvenirNextLTPro-Bold.otf);
+}
+
+/* MATERIALIZE CSS
+----------------------------------------------- */
+/* label color */
+.input-field label {
+ color: #9e9e9e;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+ color: #1976d2;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+ border-bottom: 1px solid #1976d2;
+ box-shadow: 0 1px 0 0 #1976d2;
+}
+/* valid color */
+.input-field input[type=text].valid {
+ border-bottom: 1px solid #1976d2;
+ box-shadow: 0 1px 0 0 #1976d2;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+ border-bottom: 1px solid #1976d2;
+ box-shadow: 0 1px 0 0 #1976d2;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+ color: #1976d2;
+}
+input:focus {
+    background-position: 0 0;
+    background-color: rgba(0%, 0%, 0%, 0.0);
+}
+
+input:-webkit-autofill {
+  background-color: rgba(0%, 0%, 0%, 0.0);
+  background-position: 0 0;
+}
+
+.waves-effect.waves-light{
+  color: white;
+}
+
+
+
+/* GENERAL STYLES
+----------------------------------------------- */
+html {
+	background: url(../img/background.jpeg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+/* PAGE STRUCTURE
+----------------------------------------------- */
+.nav-wrapper {
+	background-color: #1976d2;
+}
+
+nav .brand-logo {
+  color: white;
+  font-family: 'Avenir';
+  font-size: 2vh;
+  line-height: 4vh;
+}
+
+nav .brand-logo img {
+	width: 140px;
+	margin: 0 auto;
+	display: block;
+	padding-top: 12px;
+}
+
+#scale {
+	position: fixed;
+	bottom: 45px;
+	right: 24px;
+	background-color: rgba(10%, 10%, 10%, 0.40);
+	z-index: 90000000;
+}
+
+.card {
+  background-color: rgba(10%, 10%, 10%, 0.40);
+}
+
+.exit {
+  cursor: pointer;
+}
+
+.card-title {
+	font-family: 'Avenir';
+}
+
+.card-title h3 {
+	margin: 0;
+  font-size: 5vmin;
+}
+
+.current {
+  font-size: 15vmin;
+}
+
+.current sup {
+	font-size: .7em;
+  font-weight: 100;
+}
+
+.forecast td, .forecast th {
+  padding:0;
+}
+
+.wBox ul {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#empty {
+	text-align: center;
+	color: rgba(10%, 10%, 10%, 0.40);
+	font-size: 2.8vmin;
+	font-family: 'Avenir';
+}

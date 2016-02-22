@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>Weather App</title>
+
+	<!-- META  -->
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#1976d2">
+	<link rel="shortcut icon" href="./img/favicon-16x16-48dc506ad6.png">
+	<meta name="description" content="A weather app built on Syncano.">
+	<meta name="keywords" content="real-time apps, real-time app, front-end code, weather, app, demo">
+
+	<!-- STYLES  -->
+	<link rel="stylesheet" href="./css/materialize.min.css">
+	<link rel="stylesheet" href="./css/index.css">
+	<link rel="stylesheet" href="./css/weather-icons.css">
+	<link rel="stylesheet" href="./css/font-awesome.min.css">
+</head>
+
+<body>
+	<nav>
+		<div class="nav-wrapper">
+			<a href="#" class="brand-logo center">
+				<img src="./img/syncano-logo-white.png" class="image-responsive" alt="Syncano Logo white"> Weather App Demo
+			</a>
+		</div>
+	</nav>
+	<a id="scale" class="btn-floating btn-large waves-effect waves-light blue">°<span>F</span></a>
+
+	<div class="container">
+		<div class="row">
+			<form class="col s12">
+				<div class="input-field col s7">
+					<input id="city" type="text" class="validate" autocomplete="off"></input>
+					<label for="city">City</label>
+				</div>
+				<div class="input-field col s2">
+					<input id="state" type="text" class="validate" autocomplete="off"></input>
+					<label for="state">State</label>
+				</div>
+				<div class="input-field col s2" style="padding-top:5px;float:right;">
+					<a id="addWeather" class="waves-effect waves-light blue btn-flat">ADD</a>
+				</div>
+			</form>
+		</div>
+
+		<div id="empty">
+			Add a weather box! <i>For example: "New York", "NY"</i>
+		</div>
+		<div class="row" id="weatherBoxes"></div>
+	</div>
+
+	<script id="wBox-template" type="text/x-handlebars-template">
+		<div class="col s12 m6 l6" data-cityid={{city_id}}>
+			<div class="card">
+				<div class="card-content white-text">
+					<div class="row card-title">
+						<h3 class="col s10">{{city_name}}</h3>
+						<i class="col s2 right-align fa fa-times-circle-o fa-2x exit"></i>
+					</div>
+					<div class="row current center-align">
+						<span class="col s6 curr_temp" data-temp={{current_temp}}>{{displayTemp current_temp}}</span>
+						<span class="col s6 curr_cond">{{displayIcon short_description}}</span>
+					</div>
+					<div class="row">
+						<table class="bordered forecast">
+							<thead>
+								<tr>
+										<th>Forecast</th>
+										<th class="center-align">Condition</th>
+										<th class="center-align" data-field="min">High</th>
+										<th class="center-align" data-field="max">Low</th>
+								</tr>
+							</thead>
+							<tbody>
+								{{#each forecast}}
+								<tr>
+									<td width="40%">{{displayDay @key}}</td>
+									<td class="center-align">{{displayIcon short_description}}</td>
+									<td class="center-align" data-temp={{temp_min}}>{{displayTemp temp_min}}</td>
+									<td class="center-align" data-temp={{temp_min}}>{{displayTemp temp_max}}</td>
+								</tr>
+								{{/each}}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</script>
+	<script>
+		document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
+	</script>
+	<script src="./scripts/vendor/jquery.min.js"></script>
+	<script src="./scripts/vendor/handlebars.js"></script>
+	<script src="./scripts/vendor/materialize.min.js"></script>
+	<script src="./scripts/vendor/syncano.min.js"></script>
+	<script src="./scripts/index.js"></script>
+</body>
+
+</html>
