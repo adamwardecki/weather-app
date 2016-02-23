@@ -107,8 +107,6 @@ We need to now update the `weather_update_active` configuration. For this, make 
 3. Click `Config`
 4. Update the `accountKey` value `ENTER-ACCOUNT-KEY-HERE` with the `Account Key` you copied from the last step. Make sure there are no quotes or anything around your key.
 5. Update `codeboxId` with the `weather_get_data` Codebox ID.
- 
-The `get_weather` and `update_city_weather` configurations are exactly the same; make sure they are identical. Before you click the back button - write down the `id` in the text `CodeBox: update_city_weather (id: ##)`.
 
 ###Step 2 Complete
 Your application’s backend is completely set up now. Everything you need to run the front end code is done. Let's get the front end working next.
@@ -118,7 +116,7 @@ Your application’s backend is completely set up now. Everything you need to ru
 So far, you have installed a `Solution` into a new `Instance`, created your `OpenWeatherMap` account, and updated your `CodeBox` configurations.  There are only a couple more tasks left.
 
 ###Step 3.1 - Create an Instance API Key
-In order to run the application, we need to create an Instance API key - which is a key for this specific Instance and scopes the data. It has limited access to everything - so it only have access to data to which it has been give access. You can read more about the [different authentication options](http://docs.syncano.com/docs/authentication) in our documentation.
+In order to run the application, we need to create an Instance API key - which is a key for this specific Instance and scopes the data to only objects which have granted it access. You can read more about the [different authentication options](http://docs.syncano.com/docs/authentication) in our documentation.
 
 1. Make sure you are logged in your Syncano Dashboard
 2. Navigate to your Instance with the `Weather Sample App` Solution installed
