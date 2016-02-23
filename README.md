@@ -130,7 +130,7 @@ After you confirm, you will see your `API Key`. Copy that and save it somewhere 
 ###Step 3.2 - Download the Application Code
 There are a few last steps before you can view the application in your browser, but we are getting closer. Excited? Me too!
 
-1. Download the [`weather-app`](https://github.com/Syncano-Community/weather-app/archive/gh-pages.zip) repo. 
+1. Download the [`weather-app`](https://github.com/Syncano-Community/weather-app/archive/master.zip) repo. 
 2. Unzip the files and open the folder. 
 3. Locate the `index.js` file in the `scripts` folder, and open it in your favorite text editor, such as Atom, WebStorm, or VIM. 
 
