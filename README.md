@@ -35,7 +35,7 @@ Have you ever written an application and wished someone else had already done pa
 
 In the upper right corner, click "Solutions". This is where you will find various pre-made functionality to install into your `Instance`. You can narrow your choices with tags, as well as add `Solutions` to your list of favorites. 
 
-1. Follow this link - [Syncano Weather App](https://dashboard.syncano.io/#/solutions/75/edit)
+1. Follow this link - [Syncano Weather App](https://dashboard.syncano.io/#/solutions/76/edit)
 2. Click "Install Solution"
 3. Select the `Instance` you created in the previous step
 4. Select version at `1.0`
