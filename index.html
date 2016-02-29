@@ -72,8 +72,8 @@
 								<tr>
 										<th>Forecast</th>
 										<th class="center-align">Condition</th>
-										<th class="center-align" data-field="min">High</th>
-										<th class="center-align" data-field="max">Low</th>
+										<th class="center-align" data-field="min">Low</th>
+										<th class="center-align" data-field="max">High</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -82,7 +82,7 @@
 									<td width="40%">{{displayDay @key}}</td>
 									<td class="center-align">{{displayIcon short_description}}</td>
 									<td class="center-align" data-temp={{temp_min}}>{{displayTemp temp_min}}</td>
-									<td class="center-align" data-temp={{temp_min}}>{{displayTemp temp_max}}</td>
+									<td class="center-align" data-temp={{temp_max}}>{{displayTemp temp_max}}</td>
 								</tr>
 								{{/each}}
 							</tbody>
