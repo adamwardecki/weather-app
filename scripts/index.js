@@ -5,7 +5,7 @@ This weather app fetches the weather data of a city and continually updates it
 
 // Setup
 var localData;
-var BASE_URL = "YOUR WEBHOOK GOES HERE";
+var BASE_URL = "YOUR SCRIPT ENDPOINT GOES HERE";
 var syncano = new Syncano({
 	apiKey: 'YOUR API KEY GOES HERE',
 	instance: 'YOUR INSTANCE NAME GOES HERE'

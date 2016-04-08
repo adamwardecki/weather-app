@@ -7,10 +7,13 @@ delete ARGS.POST;
 delete ARGS.GET;
 
 //Sample Data to test -> {"city": "Indianapolis", "stateOrCountry": "IN"}
+var connection = Syncano({accountKey: CONFIG.accountKey});
+var DataObject = connection.DataObject;
 
-var instance = new Syncano({apiKey: CONFIG.apiKey, instance: META.instance});
-
-var weatherObjects = instance.class("weather_active_cities").dataobject();
+var weatherObjects = {
+  instanceName: META.instance,
+  className: "weather_active_cities"
+};
 
 var baseOpts = {
     baseUrl: 'http://api.openweathermap.org/data/2.5/',
@@ -87,11 +90,12 @@ var formatForecastData = function(data) {
 };
 
 var getIdbyCityId = function(data, cb) {
-    weatherObjects.list({query: {city_id:{_eq:data.city_id}}}).then(function(res){
-        if (res.objects.length === 0) {
+    DataObject.please().list(weatherObjects).filter({city_id:{_eq:data.city_id}}).then(function(res){
+        if (res.length === 0) {
             cb(false);
         } else {
-            cb(res.objects[0].id);
+            console.log(res[0].id);
+            cb(res[0].id);
         }
 
     })
@@ -101,14 +105,17 @@ var getIdbyCityId = function(data, cb) {
 };
 
 var addActiveCity = function(data) {
+    data = _.merge({}, weatherObjects, data);
     data.channel = "weather_realtime";
-    data.channel_room = data.city_id;
+    data.channel_room = data.city_id.toString();
     data.other_permissions = "full";
-    weatherObjects.add(data).catch(function(err) {});
+    DataObject.please().create(data).then().catch(function(err) {console.log(err)});
 };
 
 var updateActiveCity = function(id, data) {
-    weatherObjects.update(id, data).catch(function(err) {console.log(err)});
+    var query = _.merge({}, weatherObjects);
+    query.id = id;
+    DataObject.please().update(query, data).then().catch(function(err) {console.log(err)});
 };
 
 if ((!ARGS.city || !ARGS.stateOrCountry)&& !ARGS.city_id) {

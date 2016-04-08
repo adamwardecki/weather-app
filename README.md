@@ -93,7 +93,7 @@ At this point, you can test the CodeBox on the `Edit` screen. Click the `Edit` b
 
 Now click the play button on the right, and the terminal window will display the results of your CodeBox run. If it doesn't work, check your `Config` and make sure you have entered typed correctly.
 
-If everything is working, you should recieve something similar to this:
+If everything is working, you should receive something similar to this:
 
 ```
 {"forecast":"{\"1456333200\":{\"temp_min\":273.5,\"temp_max\":277.21,\"short_description\":\"Snow\"},\"1456419600\":{\"temp_min\":271.59,\"temp_max\":273.75,\"short_description\":\"Snow\"},\"1456506000\":{\"temp_min\":269.51,\"temp_max\":274.13,\"short_description\":\"Snow\"},\"1456592400\":{\"temp_min\":272.21,\"temp_max\":277.05,\"short_description\":\"Clear\"}}","city_id":4260977,"city_name":"Marion County","current_temp":281.26,"short_description":"Clear"}
@@ -148,17 +148,17 @@ There are 3 items you need to modify in the `index.js` file.
 5. Update `index.js` line 8 with your Webhook URL
 
 	```
-	var BASE_URL = "ADD YOUR WEBHOOK HERE";
+	var BASE_URL = "YOUR WEBHOOK GOES HERE";
 	```
 
 ####Update the Syncano Credentials
 
 1. Locate lines 9-12 in `index.js`
-	```
-	var syncano = new Syncano({
-		apiKey: 'YOUR API KEY',
-		instance: 'YOUR INSTANCE NAME'
-	});
+```
+var syncano = new Syncano({
+	apiKey: 'YOUR API KEY GOES HERE',
+	instance: 'YOUR INSTANCE NAME GOES HERE'
+});
 ```
 2. Change `apiKey` to be the Instance API Key from the last step. Of course, it's in quotes.
 3. Change `instance` to be the Instance name with the `Weather Sample App` Solution installed.
